@@ -1,0 +1,230 @@
+{
+  "version": 4,
+  "terraform_version": "1.15.3",
+  "serial": 10,
+  "lineage": "a67e736d-beaa-4354-ea58-173dc760e7d5",
+  "outputs": {},
+  "resources": [
+    {
+      "mode": "managed",
+      "type": "aws_organizations_account",
+      "name": "audit",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "arn": "arn:aws:organizations::396608808512:account/o-qxhrv1lmsd/287243894951",
+            "close_on_deletion": false,
+            "create_govcloud": false,
+            "email": "shanemarks23+audit@gmail.com",
+            "govcloud_id": "",
+            "iam_user_access_to_billing": null,
+            "id": "287243894951",
+            "joined_method": "CREATED",
+            "joined_timestamp": "2026-05-14T03:12:49Z",
+            "name": "Audit-Account",
+            "parent_id": "ou-nipw-bv9fg23l",
+            "role_name": null,
+            "state": "ACTIVE",
+            "status": "ACTIVE",
+            "tags": null,
+            "tags_all": {},
+            "timeouts": null
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "identity": {
+            "account_id": "396608808512",
+            "id": "287243894951"
+          },
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjo2MDAwMDAwMDAwMDAsImRlbGV0ZSI6NjAwMDAwMDAwMDAwLCJ1cGRhdGUiOjYwMDAwMDAwMDAwMH19",
+          "dependencies": [
+            "aws_organizations_organization.org",
+            "aws_organizations_organizational_unit.security"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "aws_organizations_account",
+      "name": "sandbox",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "arn": "arn:aws:organizations::396608808512:account/o-qxhrv1lmsd/001945408717",
+            "close_on_deletion": false,
+            "create_govcloud": false,
+            "email": "shanemarks23@gmail.com",
+            "govcloud_id": "",
+            "iam_user_access_to_billing": null,
+            "id": "001945408717",
+            "joined_method": "CREATED",
+            "joined_timestamp": "2026-05-13T22:57:27Z",
+            "name": "terraform-admin",
+            "parent_id": "r-nipw",
+            "role_name": null,
+            "state": "ACTIVE",
+            "status": "ACTIVE",
+            "tags": {},
+            "tags_all": {},
+            "timeouts": null
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "identity": {
+            "account_id": "396608808512",
+            "id": "001945408717"
+          },
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjo2MDAwMDAwMDAwMDAsImRlbGV0ZSI6NjAwMDAwMDAwMDAwLCJ1cGRhdGUiOjYwMDAwMDAwMDAwMH19",
+          "dependencies": [
+            "aws_organizations_organization.org",
+            "aws_organizations_organizational_unit.workload"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "aws_organizations_organization",
+      "name": "org",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "accounts": [
+              {
+                "arn": "arn:aws:organizations::396608808512:account/o-qxhrv1lmsd/001945408717",
+                "email": "shanemarks23@gmail.com",
+                "id": "001945408717",
+                "joined_method": "CREATED",
+                "joined_timestamp": "2026-05-13T22:57:27Z",
+                "name": "terraform-admin",
+                "state": "ACTIVE",
+                "status": "ACTIVE"
+              },
+              {
+                "arn": "arn:aws:organizations::396608808512:account/o-qxhrv1lmsd/396608808512",
+                "email": "shmar39@morgan.edu",
+                "id": "396608808512",
+                "joined_method": "INVITED",
+                "joined_timestamp": "2026-05-13T22:55:49Z",
+                "name": "Shmar39",
+                "state": "ACTIVE",
+                "status": "ACTIVE"
+              }
+            ],
+            "arn": "arn:aws:organizations::396608808512:organization/o-qxhrv1lmsd",
+            "aws_service_access_principals": [],
+            "enabled_policy_types": [],
+            "feature_set": "ALL",
+            "id": "o-qxhrv1lmsd",
+            "master_account_arn": "arn:aws:organizations::396608808512:account/o-qxhrv1lmsd/396608808512",
+            "master_account_email": "shmar39@morgan.edu",
+            "master_account_id": "396608808512",
+            "master_account_name": "Shmar39",
+            "non_master_accounts": [
+              {
+                "arn": "arn:aws:organizations::396608808512:account/o-qxhrv1lmsd/001945408717",
+                "email": "shanemarks23@gmail.com",
+                "id": "001945408717",
+                "joined_method": "CREATED",
+                "joined_timestamp": "2026-05-13T22:57:27Z",
+                "name": "terraform-admin",
+                "state": "ACTIVE",
+                "status": "ACTIVE"
+              }
+            ],
+            "return_organization_only": null,
+            "roots": [
+              {
+                "arn": "arn:aws:organizations::396608808512:root/o-qxhrv1lmsd/r-nipw",
+                "id": "r-nipw",
+                "name": "Root",
+                "policy_types": []
+              }
+            ]
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "identity": {
+            "account_id": "396608808512",
+            "id": "o-qxhrv1lmsd"
+          },
+          "private": "bnVsbA=="
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "aws_organizations_organizational_unit",
+      "name": "security",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "accounts": [],
+            "arn": "arn:aws:organizations::396608808512:ou/o-qxhrv1lmsd/ou-nipw-bv9fg23l",
+            "id": "ou-nipw-bv9fg23l",
+            "name": "Security",
+            "parent_id": "r-nipw",
+            "tags": null,
+            "tags_all": {}
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "identity": {
+            "account_id": "396608808512",
+            "id": "ou-nipw-bv9fg23l"
+          },
+          "private": "bnVsbA==",
+          "dependencies": [
+            "aws_organizations_organization.org"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "aws_organizations_organizational_unit",
+      "name": "workload",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": []
+    },
+    {
+      "mode": "managed",
+      "type": "aws_organizations_policy",
+      "name": "deny_stop_logging",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "arn": "arn:aws:organizations::396608808512:policy/o-qxhrv1lmsd/service_control_policy/p-fzr58f1k",
+            "content": "{\"Statement\":[{\"Action\":[\"cloudtrail:StopLogging\",\"cloudtrail:DeleteTrail\"],\"Effect\":\"Deny\",\"Resource\":\"*\"}],\"Version\":\"2012-10-17\"}",
+            "description": "Prevents users from disabling CloudTrail",
+            "id": "p-fzr58f1k",
+            "name": "DenyStopLogging",
+            "skip_destroy": null,
+            "tags": null,
+            "tags_all": {},
+            "type": "SERVICE_CONTROL_POLICY"
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "identity": {
+            "account_id": "396608808512",
+            "id": "p-fzr58f1k"
+          },
+          "private": "bnVsbA=="
+        }
+      ]
+    }
+  ],
+  "check_results": null
+}
